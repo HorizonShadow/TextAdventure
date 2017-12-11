@@ -10,9 +10,11 @@ module TextAdventure
   DataMapper.auto_migrate!
 
   class Server < Sinatra::Application
-    get '/?' do
+    get '/locations' do
+      @locations = Location.all
       haml :locations
     end
+
 
     def self.start!(port)
       Thread.new do

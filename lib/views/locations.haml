@@ -1,1 +1,11 @@
-Hello
+%a(href="/locations/new") New
+%table
+  %thead
+    %tr
+      %th Id
+      %th Name
+  %tbody
+    -@locations.each do |location|
+      %tr
+        %td=location.id
+        %td=location.name
